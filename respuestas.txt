@@ -1,0 +1,77 @@
+Ejercicio 2
+
+c) No fue necesario modificar la clase Empresa ya que el modelo se hizo flexible a nuevas subclases de la misma.
+   Solamente se agregó EmpleadoContratado y se implementaron los métodos de la clase abstracta Empresa. La súper clase siguió igual que al comienzo.
+
+Scripts
+
+1)
+
+var eduardo = new EmpleadoPlantaPermanente(
+		cantidadHijos = 2, 
+		antiguedad = 2,
+		nombre = "Eduardo",
+		direccion = "Avenida Siempre Viva 742",
+		estadoCivil = "Soltero",
+		sueldoBasico = 4000,
+		fechaDeNacimiento = new Date(day = 3, month = 4, year = 2000)
+	)
+var romina = new EmpleadoPlantaTemporaria(
+        fechaFinDesignacion = new Date(day = 31, month = 12, year = 2020), 
+        cantidadHorasExtras = 40, 
+        nombre = "Romina", 
+        direccion = "Negra Arroyo Lane 308", 
+        estadoCivil = "Casado", 
+        sueldoBasico = 4000, 
+        fechaDeNacimiento = new Date(day = 6, month = 6, year = 1993)
+)
+var ignacio = new EmpleadoContratado(
+        nroContrato = 2222, 
+		medioDePago = "Transferencia Bancaria",
+		nombre = "Ignacio",
+		direccion = "Corrientes 3000",
+		estadoCivil = "Soltero",
+		sueldoBasico = 4000,
+		fechaDeNacimiento = new Date(day = 12, month = 12, year = 1998)
+    )
+	
+var empresaDePrueba = new Empresa(nombre = "NombreDePrueba", cuit = 20200000003, empleados = [eduardo, romina, eren])
+
+empresaDePrueba.calculoDeSueldosNetos()
+empresaDePrueba.liquidarSueldos()
+
+2)
+
+var tatiana = new EmpleadoPlantaPermanente(
+		cantidadHijos = 0, 
+		antiguedad = 2,
+		nombre = "Tatiana",
+		direccion = "Corrientes al 400",
+		estadoCivil = "Soltero",
+		sueldoBasico = 4000,
+		fechaDeNacimiento = new Date(day = 3, month = 3, year = 2001)
+	)
+var paula = new EmpleadoPlantaPermanente(
+        fechaFinDesignacion = new Date(day = 31, month = 12, year = 2020), 
+        cantidadHorasExtras = 40, 
+        nombre = "Paula", 
+        direccion = "Camino Norte 159", 
+        estadoCivil = "Casado", 
+        sueldoBasico = 4000, 
+        fechaDeNacimiento = new Date(day = 9, month = 1, year = 1980)
+)
+
+var magnus = new EmpleadoContratado(
+        nroContrato = 2223,
+		medioDePago = "Cheque",
+		nombre = "Magnus",
+		direccion = "Norway",
+		estadoCivil = "Soltero",
+		sueldoBasico = 4000,
+		fechaDeNacimiento = new Date(day = 30, month = 11, year = 1990)
+)
+	
+var otraEmpresaDePrueba = new Empresa(nombre = "OtroNombrePocoDescriptivo", cuit = 20320000003, empleados = [paula, tatiana, magnus])
+
+empresaDePrueba.calculoDeSueldosNetos()
+empresaDePrueba.liquidarSueldos()
